@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:ryan/pages/signup.dart';
+import 'package:ryan/pages/signin.dart';
 
-class SignIn extends StatefulWidget {
-  const SignIn({super.key});
+class Signup extends StatefulWidget {
+  const Signup({super.key});
 
   @override
-  State<SignIn> createState() => _SignInState();
+  State<Signup> createState() => _SignupState();
 }
 
-class _SignInState extends State<SignIn> {
+class _SignupState extends State<Signup> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,7 +18,7 @@ class _SignInState extends State<SignIn> {
       width: MediaQuery.of(context).size.width,
       decoration: const BoxDecoration(
           gradient: LinearGradient(
-              colors: [Color(0xffea3452), Color(0xffec4662), Color(0xffee5972)],
+              colors: [Color(0xff2c4e2d), Color(0xff335b34), Color(0xff3b683c)],
               begin: Alignment.topLeft,
               end: Alignment.topRight)),
       child: Column(
@@ -27,14 +27,14 @@ class _SignInState extends State<SignIn> {
           Padding(
             padding: const EdgeInsets.only(left: 30),
             child: const Text(
-              "Hey There\nSign in!",
+              "Create Your\nAccount",
               style: TextStyle(
                   color: Colors.white,
                   fontSize: 40,
                   fontWeight: FontWeight.bold),
             ),
           ),
-          SizedBox(height: 90),
+          SizedBox(height: 40),
           Expanded(
             child: SingleChildScrollView(
               child: Container(
@@ -49,21 +49,43 @@ class _SignInState extends State<SignIn> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
+                      "Name",
+                      style: TextStyle(
+                          color: Color(0xff2c4e2d),
+                          fontSize: 23,
+                          fontWeight: FontWeight.bold),
+                    ),
+                    TextField(
+                      decoration: InputDecoration(
+                          hintText: "Enter Name",
+                          hintStyle: TextStyle(
+                              color: const Color.fromARGB(255, 197, 47, 1)),
+                          prefixIcon: Icon(Icons.person_outlined)),
+                    ),
+                    SizedBox(
+                      height: 40,
+                    ),
+                    Text(
                       "Email",
                       style: TextStyle(
-                          color: Color(0xffea3452),
+                          color: Color(0xff2c4e2d),
                           fontSize: 23,
                           fontWeight: FontWeight.bold),
                     ),
                     TextField(
                       decoration: InputDecoration(
                           hintText: "Enter Email",
+                          hintStyle: TextStyle(
+                              color: const Color.fromARGB(255, 197, 47, 1)),
                           prefixIcon: Icon(Icons.email_outlined)),
+                    ),
+                    SizedBox(
+                      height: 40,
                     ),
                     Text(
                       "Password",
                       style: TextStyle(
-                          color: Color(0xffea3452),
+                          color: Color(0xff2c4e2d),
                           fontSize: 23,
                           fontWeight: FontWeight.bold),
                     ),
@@ -73,55 +95,46 @@ class _SignInState extends State<SignIn> {
                     TextField(
                       decoration: InputDecoration(
                           hintText: "Enter Password",
+                          hintStyle: TextStyle(
+                              color: const Color.fromARGB(255, 197, 47, 1)),
                           prefixIcon: Icon(Icons.key_outlined)),
                     ),
                     SizedBox(
                       height: 20,
                     ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        Text(
-                          "Forgot Password?",
-                          style: TextStyle(
-                              color: const Color.fromARGB(255, 2, 51, 136),
-                              fontSize: 16,
-                              fontWeight: FontWeight.bold),
-                        ),
-                      ],
-                    ),
                     SizedBox(
-                      height: 70,
+                      height: 40,
                     ),
                     Container(
                       height: 58,
                       decoration: BoxDecoration(
                           gradient: LinearGradient(colors: [
-                            Color(0xffee5972),
-                            Color(0xffec4662),
-                            Color(0xffea3452)
+                            Color(0xff3b683c),
+                            Color(0xff335b34),
+                            Color(0xff2c4e2d)
                           ], begin: Alignment.topLeft, end: Alignment.topRight),
                           borderRadius: BorderRadius.circular(25)),
                       width: MediaQuery.of(context).size.width,
                       child: Center(
                         child: Text(
-                          "SIGN IN",
+                          "SIGN UP",
                           style: TextStyle(
-                              color: Color(0xff2c4e2d),
+                              color: Colors.pinkAccent,
                               shadows: [
                                 Shadow(
                                   offset: Offset(2.0, 2.0), // X and Y offsets
-                                  blurRadius: 0.3, // The blur intensity
+                                  blurRadius: 3.0, // The blur intensity
                                   color: Colors.black, // Shadow color
                                 ),
                               ],
+                              letterSpacing: 1.5,
                               fontSize: 24,
                               fontWeight: FontWeight.bold),
                         ),
                       ),
                     ),
                     SizedBox(
-                      height: MediaQuery.of(context).size.height / 5,
+                      height: MediaQuery.of(context).size.height / 4,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.end,
@@ -130,9 +143,9 @@ class _SignInState extends State<SignIn> {
                           crossAxisAlignment: CrossAxisAlignment.end,
                           children: [
                             Text(
-                              "Don't have an account?",
+                              "Already have an account?",
                               style: TextStyle(
-                                  color: Colors.black87,
+                                  color: const Color.fromARGB(255, 0, 0, 0),
                                   fontSize: 20,
                                   fontWeight: FontWeight.w500),
                             ),
@@ -141,13 +154,13 @@ class _SignInState extends State<SignIn> {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => Signup()));
+                                        builder: (context) => SignIn()));
                               },
                               child: Text(
-                                "SIGN UP",
+                                "SIGN IN",
                                 style: TextStyle(
                                     color:
-                                        const Color.fromARGB(255, 2, 51, 136),
+                                        const Color.fromARGB(255, 0, 84, 230),
                                     fontSize: 20,
                                     fontStyle: FontStyle.italic,
                                     decoration: TextDecoration.underline,
